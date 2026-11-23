@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Aniq Fahmi | Data Science &amp; Business Analyst Portfolio</title>
+  <meta name="description" content="Portfolio of Muhammad Aniq Fahmi Bin Azhar — Business Analyst and Data Science graduate (MMU Cyberjaya) specializing in Machine Learning, Deep Learning, Business Intelligence, and Enterprise Digital Solutions." />
+
+  <!-- Google Fonts: Plus Jakarta Sans (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            cobalt: '#2563EB',
+            emeraldteal: '#059669',
+            skycyan: '#0284C7',
+          },
+          boxShadow: {
+            'card-soft': '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -4px rgba(15, 23, 42, 0.06)',
+            'card-hover': '0 4px 10px rgba(37, 99, 235, 0.08), 0 18px 36px -8px rgba(15, 23, 42, 0.10)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Base Typography & Smooth Theme Transitions */
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    }
+
+    /* Subtle Light Dot-Grid Background for Hero */
+    .hero-dot-grid {
+      background-image: radial-gradient(rgba(37, 99, 235, 0.14) 1px, transparent 1px);
+      background-size: 26px 26px;
+      mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, black 35%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, black 35%, transparent 100%);
+    }
+
+    .dark .hero-dot-grid {
+      background-image: radial-gradient(rgba(56, 189, 248, 0.16) 1px, transparent 1px);
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Filtered Project Card Entrance */
+    @keyframes cardPop {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.99);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-card {
+      animation: cardPop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Active Scroll-Spy Nav Link */
+    .nav-link.active {
+      color: #2563EB;
+      background-color: #EFF6FF;
+      font-weight: 600;
+    }
+
+    .dark .nav-link.active {
+      color: #60A5FA;
+      background-color: rgba(37, 99, 235, 0.18);
+    }
+
+    /* Custom Clean Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F8FAFC;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+      background: #334155;
+    }
+
+    /* Print Stylesheet: Sharp Resume Sheet Output */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #resume-printable-area,
+      #resume-printable-area * {
+        visibility: visible;
+      }
+      #resume-printable-area {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        max-width: 100% !important;
+        max-height: none !important;
+        overflow: visible !important;
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        padding: 20px 28px !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-[#475569] dark:bg-slate-950 dark:text-slate-300 antialiased selection:bg-blue-100 selection:text-blue-900 dark:selection:bg-blue-500/30 dark:selection:text-blue-100">
+
+  <!-- ==================== 1. STICKY TRANSLUCENT NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-slate-950/85 backdrop-blur-xl transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-[72px]">
+
+        <!-- Brand Logo + Availability Dot -->
+        <a href="#about" class="group flex items-center gap-2 focus:outline-none">
+          <span class="font-heading text-xl sm:text-[22px] font-extrabold tracking-tight text-[#0F172A] dark:text-white">
+            Aniq Fahmi<span class="text-[#2563EB]">.</span>
+          </span>
+          <span class="relative flex h-2.5 w-2.5 ml-0.5" title="Available Immediately">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#059669]"></span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation Links (Scroll-Spy Enabled) -->
+        <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-1">
+          <a href="#about" data-section="about" class="nav-link active px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/70 transition-all">About</a>
+          <a href="#projects" data-section="projects" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/70 transition-all">Projects</a>
+          <a href="#experience" data-section="experience" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/70 transition-all">Experience</a>
+          <a href="#skills" data-section="skills" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/70 transition-all">Skills</a>
+          <a href="#contact" data-section="contact" class="nav-link px-3.5 py-2 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100/80 dark:hover:bg-slate-800/70 transition-all">Contact</a>
+        </nav>
+
+        <!-- Right Controls: Theme Toggle + Resume PDF Pill + Mobile Hamburger -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Light/Dark Toggle Button -->
+          <button
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle Light and Dark Mode"
+            title="Switch Light / Dark Mode"
+            class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-blue-300 dark:hover:border-blue-500/50 hover:text-[#2563EB] dark:hover:text-blue-400 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/30"
+          >
+            <!-- Moon Icon (Visible in Light Mode) -->
+            <svg class="w-[18px] h-[18px] block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+            <!-- Sun Icon (Visible in Dark Mode) -->
+            <svg class="w-[18px] h-[18px] hidden dark:block" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="m4.93 4.93 1.41 1.41"></path>
+              <path d="m17.66 17.66 1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="m6.34 17.66-1.41 1.41"></path>
+              <path d="m19.07 4.93-1.41 1.41"></path>
+            </svg>
+          </button>
+
+          <!-- Resume PDF Pill Button -->
+          <button
+            type="button"
+            onclick="openResumeModal()"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-[#2563EB] hover:bg-blue-700 text-white shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/25 transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span>Resume PDF</span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            aria-label="Open Navigation Menu"
+            aria-expanded="false"
+            class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-blue-300 transition-colors"
+          >
+            <svg id="menu-open-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+            <svg id="menu-close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-3 space-y-1 shadow-lg">
+      <a href="#about" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-[#2563EB]">About</a>
+      <a href="#projects" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-[#2563EB]">Projects</a>
+      <a href="#experience" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-[#2563EB]">Experience</a>
+      <a href="#skills" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-[#2563EB]">Skills</a>
+      <a href="#contact" class="mobile-nav-link block px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-[#2563EB]">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 2. HERO SECTION (#about) ==================== -->
+    <section id="about" class="relative overflow-hidden bg-white dark:bg-slate-950 pt-14 pb-20 sm:pt-20 sm:pb-28 border-b border-slate-200/80 dark:border-slate-800/80">
+      <!-- Subtle Light Dot-Grid & Airy Pastel Glow Accents -->
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 hero-dot-grid"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-blue-100/70 dark:bg-blue-600/15 blur-3xl"></div>
+      <div aria-hidden="true" class="pointer-events-none absolute top-16 -right-24 w-[26rem] h-[26rem] rounded-full bg-emerald-100/70 dark:bg-emerald-500/15 blur-3xl"></div>
+
+      <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+          <!-- Left Column: Intro, Value Proposition & CTAs -->
+          <div class="lg:col-span-7">
+            <!-- Top Availability Pill Badge -->
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#ECFDF5] dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-[#059669] dark:text-emerald-300 text-xs sm:text-sm font-semibold mb-6">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#059669]"></span>
+              </span>
+              <span>Available Immediately &bull; Subang Jaya, Selangor</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]">
+              Muhammad Aniq Fahmi
+            </h1>
+
+            <!-- Gradient Accent Role Subtitle -->
+            <p class="mt-3 font-heading text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#2563EB] via-[#0284C7] to-[#059669] bg-clip-text text-transparent">
+              Data Science &amp; Business Analyst
+            </p>
+
+            <!-- Value Proposition from Resume -->
+            <p class="mt-5 text-base sm:text-[17px] text-[#475569] dark:text-slate-300 leading-relaxed max-w-2xl">
+              Results-driven Business Analyst and Data Science graduate blending predictive analytics with strategic execution. Experienced in eliciting enterprise requirements, delivering ministry-level presentations, and developing deep learning solutions with <span class="font-semibold text-[#0F172A] dark:text-white">94% accuracy</span>.
+            </p>
+
+            <!-- Primary CTA Buttons -->
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <!-- 1. Explore Projects -->
+              <a
+                href="#projects"
+                class="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 rounded-xl text-sm font-semibold bg-[#2563EB] hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/25 transition-all"
+              >
+                <span>Explore Projects</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+
+              <!-- 2. Download Resume (PDF) -->
+              <a
+                href="Aniq_Fahmi_Resume.pdf"
+                download="Aniq_Fahmi_Resume.pdf"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-[#ECFDF5] hover:bg-emerald-100/90 dark:bg-emerald-500/15 dark:hover:bg-emerald-500/25 text-[#059669] dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30 transition-all"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download Resume (PDF)</span>
+              </a>
+
+              <!-- 3. Preview Resume -->
+              <button
+                type="button"
+                onclick="openResumeModal()"
+                class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold bg-white dark:bg-slate-900 text-[#0F172A] dark:text-slate-100 border border-[#E2E8F0] dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500/60 hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-all"
+              >
+                <svg class="w-4 h-4 text-[#0284C7]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>Preview Resume</span>
+              </button>
+            </div>
+
+            <!-- Direct Social Icon Buttons -->
+            <div class="mt-7 flex flex-wrap items-center gap-3">
+              <a
+                href="https://www.linkedin.com/in/aniqfahmi03/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-900 text-[#0F172A] dark:text-slate-200 border border-[#E2E8F0] dark:border-slate-800 hover:border-blue-300 hover:bg-[#EFF6FF] dark:hover:border-blue-500/50 hover:text-[#2563EB] transition-all"
+              >
+                <svg class="w-4 h-4 text-[#2563EB]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
+              <a
+                href="https://github.com/aniqfahmi03"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-900 text-[#0F172A] dark:text-slate-200 border border-[#E2E8F0] dark:border-slate-800 hover:border-slate-400 hover:bg-slate-100 dark:hover:border-slate-600 transition-all"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                </svg>
+                <span>GitHub</span>
+              </a>
+
+              <a
+                href="mailto:aniqfahmi03@gmail.com"
+                class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-50 dark:bg-slate-900 text-[#0F172A] dark:text-slate-200 border border-[#E2E8F0] dark:border-slate-800 hover:border-emerald-300 hover:bg-[#ECFDF5] dark:hover:border-emerald-500/50 hover:text-[#059669] transition-all"
+              >
+                <svg class="w-4 h-4 text-[#059669]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <span>aniqfahmi03@gmail.com</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Profile & Impact Snapshot Card -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft p-6 sm:p-7 overflow-hidden">
+              <!-- Subtle Top Accent Gradient Strip -->
+              <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#2563EB] via-[#0284C7] to-[#059669]"></div>
+
+              <!-- Profile Header inside Snapshot Card -->
+              <div class="flex items-center gap-4 pb-6 border-b border-slate-100 dark:border-slate-800">
+                <!--
+                  =============================================================
+                  HOW TO ADD YOUR PROFILE PHOTO:
+                  1. Put your photo file (e.g., profile.jpg) in the same folder
+                     as index.html on GitHub.
+                  2. Replace the <div> with the "AF" monogram below using:
+                     <img src="profile.jpg" alt="Muhammad Aniq Fahmi"
+                          class="w-16 h-16 rounded-full object-cover ring-4 ring-blue-50 dark:ring-slate-800" />
+                  =============================================================
+                -->
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#059669] p-0.5 shadow-md shrink-0">
+                  <div class="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center">
+                    <span class="font-heading text-xl font-extrabold bg-gradient-to-br from-[#2563EB] to-[#059669] bg-clip-text text-transparent">
+                      AF
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-[#0284C7] dark:text-sky-400">
+                    Profile &amp; Impact Snapshot
+                  </span>
+                  <h2 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white leading-tight mt-0.5">
+                    Data Science &amp; Business Analyst
+                  </h2>
+                  <p class="text-xs text-[#475569] dark:text-slate-400 flex items-center gap-1 mt-1">
+                    <svg class="w-3.5 h-3.5 text-[#059669] shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Subang Jaya, Selangor</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- 4 Highlight Metric Tiles -->
+              <div class="grid grid-cols-2 gap-3.5 mt-6">
+                <!-- Metric 1 -->
+                <div class="p-4 rounded-2xl bg-[#EFF6FF] dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20">
+                  <div class="font-heading text-2xl sm:text-3xl font-extrabold text-[#2563EB] dark:text-blue-400">
+                    94%
+                  </div>
+                  <p class="mt-1 text-xs font-medium text-slate-600 dark:text-slate-300 leading-snug">
+                    Deep Learning Accuracy (FYP)
+                  </p>
+                </div>
+
+                <!-- Metric 2 -->
+                <div class="p-4 rounded-2xl bg-[#ECFDF5] dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20">
+                  <div class="font-heading text-2xl sm:text-3xl font-extrabold text-[#059669] dark:text-emerald-400">
+                    3.24
+                  </div>
+                  <p class="mt-1 text-xs font-medium text-slate-600 dark:text-slate-300 leading-snug">
+                    B.CompSc (Hons) Data Science CGPA
+                  </p>
+                </div>
+
+                <!-- Metric 3 -->
+                <div class="p-4 rounded-2xl bg-[#F0F9FF] dark:bg-sky-500/10 border border-sky-100 dark:border-sky-500/20">
+                  <div class="font-heading text-2xl sm:text-3xl font-extrabold text-[#0284C7] dark:text-sky-400">
+                    3.60
+                  </div>
+                  <p class="mt-1 text-xs font-medium text-slate-600 dark:text-slate-300 leading-snug">
+                    Foundation in IT CGPA
+                  </p>
+                </div>
+
+                <!-- Metric 4 -->
+                <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-800/70 border border-[#E2E8F0] dark:border-slate-700">
+                  <div class="font-heading text-2xl sm:text-3xl font-extrabold text-[#0F172A] dark:text-white">
+                    3+ Orgs
+                  </div>
+                  <p class="mt-1 text-xs font-medium text-slate-600 dark:text-slate-300 leading-snug">
+                    TM, AISS &amp; Khazanah K-Youth
+                  </p>
+                </div>
+              </div>
+
+              <!-- Footer Micro-Bar inside Snapshot Card -->
+              <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <span class="font-medium">MMU Cyberjaya &bull; Class of 2026</span>
+                <span class="inline-flex items-center gap-1 font-semibold text-[#059669] dark:text-emerald-400">
+                  Immediate Starter
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. PROJECTS SECTION (#projects) ==================== -->
+    <section id="projects" class="py-20 sm:py-24 bg-[#F8FAFC] dark:bg-slate-900/50 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header + Filter Pills -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12 reveal">
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 border border-blue-100 dark:border-blue-500/20">
+              Featured Case Studies
+            </span>
+            <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] dark:text-white">
+              Selected Projects &amp; Deliverables
+            </h2>
+            <p class="mt-2.5 text-sm sm:text-base text-[#475569] dark:text-slate-400 max-w-2xl">
+              Practical implementations across deep learning, computer vision, enterprise requirements analysis, risk analytics, and scalable BI web platforms.
+            </p>
+          </div>
+
+          <!-- Interactive Filter Pills -->
+          <div role="tablist" aria-label="Filter projects by category" class="flex flex-wrap gap-2">
+            <button type="button" data-filter="All" class="filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-[#2563EB] text-white shadow-sm shadow-blue-600/20 transition-all">
+              All
+            </button>
+            <button type="button" data-filter="Machine Learning" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-[#E2E8F0] dark:border-slate-700 hover:border-blue-300 hover:text-[#2563EB] transition-all">
+              Machine Learning
+            </button>
+            <button type="button" data-filter="Business Analysis" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-[#E2E8F0] dark:border-slate-700 hover:border-blue-300 hover:text-[#2563EB] transition-all">
+              Business Analysis
+            </button>
+            <button type="button" data-filter="BI & Web Ops" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-medium bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-[#E2E8F0] dark:border-slate-700 hover:border-blue-300 hover:text-[#2563EB] transition-all">
+              BI &amp; Web Ops
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid (Populated via JS) -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards rendered dynamically -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. EXPERIENCE & EDUCATION SECTION (#experience) ==================== -->
+    <section id="experience" class="py-20 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 border border-emerald-100 dark:border-emerald-500/20">
+            Career &amp; Academic Journey
+          </span>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] dark:text-white">
+            Experience &amp; Education
+          </h2>
+          <p class="mt-2.5 text-sm sm:text-base text-[#475569] dark:text-slate-400">
+            Proven delivery across enterprise business analysis, business intelligence operations, risk data science, and computer science honors studies.
+          </p>
+        </div>
+
+        <!-- Structured Two-Column Layout: Timeline (Left 8 cols) + Education Cards (Right 4 cols) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+          <!-- Work Experience Timeline -->
+          <div class="lg:col-span-8">
+            <h3 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white flex items-center gap-2.5 mb-6">
+              <span class="p-2 rounded-xl bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </span>
+              <span>Work Experience</span>
+            </h3>
+
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-blue-100 dark:border-slate-800 space-y-6">
+
+              <!-- Role 1: AISS Sdn Bhd -->
+              <article class="reveal relative p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover hover:border-blue-200 dark:hover:border-blue-500/40 transition-all">
+                <span class="absolute -left-[33px] sm:-left-[41px] top-7 h-4 w-4 rounded-full bg-[#2563EB] ring-4 ring-white dark:ring-slate-950"></span>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                  <div>
+                    <h4 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white">Business Analyst</h4>
+                    <p class="text-sm font-semibold text-[#2563EB] dark:text-blue-400">AISS Sdn Bhd</p>
+                  </div>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 border border-blue-100 dark:border-blue-500/20 w-fit shrink-0">
+                    July 2026 &ndash; October 2026
+                  </span>
+                </div>
+                <ul class="mt-4 space-y-2 text-sm text-[#475569] dark:text-slate-300 leading-relaxed">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Stakeholder Engagement &amp; Solution Pitching:</strong> Prepared strategic project proposals and delivered high-level presentations to Malaysian ministries and key clients, translating organizational pain points into actionable digital solutions.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Requirements Elicitation &amp; Process Mapping:</strong> Facilitated workshops with cross-functional teams, clients, and end-users to translate business requirements into clear user stories, acceptance criteria, and process flow diagrams.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#2563EB] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Gap Analysis &amp; Feasibility:</strong> Conducted system architecture gap analyses to streamline development priorities and align technical deliverables with client expectations.</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Role 2: M&N Group Companies (K-Youth) -->
+              <article class="reveal relative p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover hover:border-emerald-200 dark:hover:border-emerald-500/40 transition-all">
+                <span class="absolute -left-[33px] sm:-left-[41px] top-7 h-4 w-4 rounded-full bg-[#059669] ring-4 ring-white dark:ring-slate-950"></span>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                  <div>
+                    <h4 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white">Graduate Trainee K-Youth Programme (Business Intelligence)</h4>
+                    <p class="text-sm font-semibold text-[#059669] dark:text-emerald-400">M&amp;N Group Companies</p>
+                  </div>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 border border-emerald-100 dark:border-emerald-500/20 w-fit shrink-0">
+                    April 2026 &ndash; July 2026
+                  </span>
+                </div>
+                <ul class="mt-4 space-y-2 text-sm text-[#475569] dark:text-slate-300 leading-relaxed">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#059669] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Business Intelligence &amp; Trend Analysis:</strong> Analyzed KULQR user metrics and evaluated corporate synthetic data to forecast market trends and support strategic event planning.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#059669] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Wix Studio Web Operations &amp; Dynamic CMS Architecture:</strong> Managed and optimized multi-brand web platforms (KULQR &amp; JBQR), connecting Wix CMS databases to dynamic front-end layouts for scalable content rendering.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#059669] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Interactive UI &amp; Digital Content Operations:</strong> Designed user prompts, modal popups, marketing storyboards, and tactical LinkedIn &amp; TikTok publishing workflows to boost engagement.</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Role 3: TM Technology Services -->
+              <article class="reveal relative p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover hover:border-sky-200 dark:hover:border-sky-500/40 transition-all">
+                <span class="absolute -left-[33px] sm:-left-[41px] top-7 h-4 w-4 rounded-full bg-[#0284C7] ring-4 ring-white dark:ring-slate-950"></span>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                  <div>
+                    <h4 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white">Data Science Intern (Division of Risk Management)</h4>
+                    <p class="text-sm font-semibold text-[#0284C7] dark:text-sky-400">TM Technology Services Sdn. Bhd.</p>
+                  </div>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-300 border border-sky-100 dark:border-sky-500/20 w-fit shrink-0">
+                    July 2025 &ndash; October 2025
+                  </span>
+                </div>
+                <ul class="mt-4 space-y-2 text-sm text-[#475569] dark:text-slate-300 leading-relaxed">
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#0284C7] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Data Sanitization &amp; Management:</strong> Executed thorough data cleaning and sanitization pipelines to safeguard data integrity for downstream analytical models.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#0284C7] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Predictive Modeling Support:</strong> Collaborated on ML-based risk prediction initiatives to strengthen risk assessment frameworks and data-driven governance.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#0284C7] shrink-0"></span>
+                    <span><strong class="text-[#0F172A] dark:text-white">Risk Mitigation &amp; Executive Visualization:</strong> Supported Central Function operational risk mitigation strategies and created concise visual summaries in Canva for executive presentations.</span>
+                  </li>
+                </ul>
+              </article>
+
+              <!-- Role 4: Labeljiqaen Thrift Store -->
+              <article class="reveal relative p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+                <span class="absolute -left-[33px] sm:-left-[41px] top-7 h-4 w-4 rounded-full bg-slate-400 dark:bg-slate-500 ring-4 ring-white dark:ring-slate-950"></span>
+                <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2">
+                  <div>
+                    <h4 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white">Retail Assistant (Part-Time)</h4>
+                    <p class="text-sm font-semibold text-slate-600 dark:text-slate-400">Labeljiqaen Thrift Store, Cyberjaya</p>
+                  </div>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 w-fit shrink-0">
+                    June 2024 &ndash; December 2025
+                  </span>
+                </div>
+                <p class="mt-3 text-sm text-[#475569] dark:text-slate-300 leading-relaxed">
+                  Managed daily retail operations including inventory restocking, strategic product pricing, floor management, proactive customer engagement, conflict resolution, and promotional setups.
+                </p>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Education Cards -->
+          <div class="lg:col-span-4 space-y-6">
+            <h3 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white flex items-center gap-2.5 mb-6">
+              <span class="p-2 rounded-xl bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-400">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </span>
+              <span>Education</span>
+            </h3>
+
+            <!-- Education Card 1: Degree -->
+            <div class="reveal relative p-6 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft overflow-hidden">
+              <div class="absolute top-0 inset-x-0 h-1 bg-[#2563EB]"></div>
+              <span class="inline-block px-2.5 py-1 rounded-lg text-xs font-semibold bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 mb-3">
+                2022 &ndash; 2026
+              </span>
+              <h4 class="font-heading text-base font-bold text-[#0F172A] dark:text-white leading-snug">
+                Bachelor of Computer Science (Honours) (Data Science)
+              </h4>
+              <p class="mt-1.5 text-sm font-medium text-[#475569] dark:text-slate-400">
+                Multimedia University (MMU Cyberjaya)
+              </p>
+              <div class="mt-4 pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Final CGPA</span>
+                <span class="font-heading text-lg font-extrabold text-[#2563EB] dark:text-blue-400">3.24</span>
+              </div>
+            </div>
+
+            <!-- Education Card 2: Foundation -->
+            <div class="reveal relative p-6 rounded-2xl bg-[#F8FAFC] dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft overflow-hidden">
+              <div class="absolute top-0 inset-x-0 h-1 bg-[#059669]"></div>
+              <span class="inline-block px-2.5 py-1 rounded-lg text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 mb-3">
+                2021 &ndash; 2022
+              </span>
+              <h4 class="font-heading text-base font-bold text-[#0F172A] dark:text-white leading-snug">
+                Foundation in Information Technology
+              </h4>
+              <p class="mt-1.5 text-sm font-medium text-[#475569] dark:text-slate-400">
+                Multimedia University (MMU Cyberjaya)
+              </p>
+              <div class="mt-4 pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Final CGPA</span>
+                <span class="font-heading text-lg font-extrabold text-[#059669] dark:text-emerald-400">3.60</span>
+              </div>
+            </div>
+
+            <!-- Quick Resume CTA Box -->
+            <div class="reveal p-6 rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-white to-[#ECFDF5] dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 border border-blue-100 dark:border-slate-800 shadow-sm">
+              <h4 class="font-heading text-sm font-bold text-[#0F172A] dark:text-white">Need a copy for your hiring team?</h4>
+              <p class="mt-1.5 text-xs text-[#475569] dark:text-slate-400 leading-relaxed">
+                Download the official 2-page PDF resume or preview the complete formatted version right here.
+              </p>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <a
+                  href="Aniq_Fahmi_Resume.pdf"
+                  download="Aniq_Fahmi_Resume.pdf"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#2563EB] hover:bg-blue-700 text-white transition-colors"
+                >
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download PDF</span>
+                </a>
+                <button
+                  type="button"
+                  onclick="openResumeModal()"
+                  class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 text-[#0F172A] dark:text-slate-200 border border-[#E2E8F0] dark:border-slate-700 hover:border-blue-300 transition-colors"
+                >
+                  <span>Open Preview</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. SKILLS & CERTIFICATIONS SECTION (#skills) ==================== -->
+    <section id="skills" class="py-20 sm:py-24 bg-[#F8FAFC] dark:bg-slate-900/50 border-b border-slate-200/80 dark:border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header -->
+        <div class="max-w-2xl mb-12 reveal">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-300 border border-sky-100 dark:border-sky-500/20">
+            Area of Expertise
+          </span>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] dark:text-white">
+            Technical Skills &amp; Certifications
+          </h2>
+          <p class="mt-2.5 text-sm sm:text-base text-[#475569] dark:text-slate-400">
+            Full-spectrum analytical stack combining machine learning, BI visualization, data engineering workflows, and structured business analysis.
+          </p>
+        </div>
+
+        <!-- 6-Category Bright Skill Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Skill Card 1: Languages -->
+          <div class="reveal p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-xl bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-[#0F172A] dark:text-white">Languages</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#EFF6FF] dark:bg-blue-500/10 text-[#2563EB] dark:text-blue-300">Python</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Pandas</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">NumPy</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Scikit-Learn</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#EFF6FF] dark:bg-blue-500/10 text-[#2563EB] dark:text-blue-300">SQL (MySQL)</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">HTML</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 2: Data Visualization & Web Apps -->
+          <div class="reveal p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-xl bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-[#0F172A] dark:text-white">Data Visualization &amp; Web Apps</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/10 text-[#059669] dark:text-emerald-300">Streamlit</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/10 text-[#059669] dark:text-emerald-300">Power BI</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Tableau</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Matplotlib</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Seaborn</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Wix Studio</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Canva</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 3: Machine Learning & AI -->
+          <div class="reveal p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-xl bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path>
+                  <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path>
+                  <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-[#0F172A] dark:text-white">Machine Learning &amp; AI</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#F0F9FF] dark:bg-sky-500/10 text-[#0284C7] dark:text-sky-300">Deep Learning (CNN, LSTM)</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Classification (Random Forest, SVM)</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Regression</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Computer Vision (Image Segmentation)</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 4: Technical Tools -->
+          <div class="reveal p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-xl bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-[#0F172A] dark:text-white">Technical Tools</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#EFF6FF] dark:bg-blue-500/10 text-[#2563EB] dark:text-blue-300">TensorFlow / Keras</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Git</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Jupyter Notebook</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Google Colab</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Visual Studio Code</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">IBM Cognitive Class</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 5: Data Engineering & Processes -->
+          <div class="reveal p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-xl bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M3 5v14a9 3 0 0 0 18 0V5"></path>
+                  <path d="M3 12a9 3 0 0 0 18 0"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-[#0F172A] dark:text-white">Data Engineering &amp; Processes</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/10 text-[#059669] dark:text-emerald-300">Data Sanitization</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Feature Engineering</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Exploratory Data Analysis (EDA)</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Predictive Modeling</span>
+            </div>
+          </div>
+
+          <!-- Skill Card 6: Business Analysis -->
+          <div class="reveal p-6 rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover transition-all">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-xl bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="font-heading text-base font-bold text-[#0F172A] dark:text-white">Business Analysis</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#F0F9FF] dark:bg-sky-500/10 text-[#0284C7] dark:text-sky-300">Requirements Gathering</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Stakeholder Management</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Process Mapping</span>
+              <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700">Gap Analysis</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Awards & Certifications Strip -->
+        <div class="mt-10 reveal p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+            <div class="flex items-center gap-3">
+              <div class="p-2.5 rounded-xl bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white">Awards &amp; Certifications</h3>
+                <p class="text-xs text-[#475569] dark:text-slate-400">Verified credentials and ongoing industry certifications</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+            <!-- Cert 1 -->
+            <div class="p-4 rounded-2xl bg-[#EFF6FF]/70 dark:bg-blue-500/10 border border-blue-100 dark:border-blue-500/20">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 text-[#2563EB] dark:text-blue-300 border border-blue-100 dark:border-slate-700 mb-2">
+                In Progress
+              </span>
+              <h4 class="font-heading text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white leading-snug">CompTIA Tech+</h4>
+              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Expected November 2026</p>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-800/70 border border-[#E2E8F0] dark:border-slate-700">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 mb-2">
+                IBM
+              </span>
+              <h4 class="font-heading text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white leading-snug">Data Analyst: Career Preparation</h4>
+              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">IBM &ndash; Cognitive Class</p>
+            </div>
+
+            <!-- Cert 3 -->
+            <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-800/70 border border-[#E2E8F0] dark:border-slate-700">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 mb-2">
+                IBM
+              </span>
+              <h4 class="font-heading text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white leading-snug">Python 101 for Data Science</h4>
+              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">IBM Cognitive Class</p>
+            </div>
+
+            <!-- Cert 4 -->
+            <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-800/70 border border-[#E2E8F0] dark:border-slate-700">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-300 mb-2">
+                BI
+              </span>
+              <h4 class="font-heading text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white leading-snug">Drag, Drop &amp; Visualize with Power BI</h4>
+              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Certificate of Completion</p>
+            </div>
+
+            <!-- Cert 5 -->
+            <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-800/70 border border-[#E2E8F0] dark:border-slate-700">
+              <span class="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 mb-2">
+                Web
+              </span>
+              <h4 class="font-heading text-xs sm:text-sm font-bold text-[#0F172A] dark:text-white leading-snug">HTML Basic</h4>
+              <p class="mt-1 text-xs text-slate-600 dark:text-slate-400">BitDegree Learn</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 6. CONTACT SECTION (#contact) ==================== -->
+    <section id="contact" class="py-20 sm:py-24 bg-white dark:bg-slate-950">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Bright Inviting Call-To-Action Wrapper -->
+        <div class="reveal rounded-3xl bg-gradient-to-br from-[#F8FAFC] via-white to-[#EFF6FF]/60 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800/70 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft p-6 sm:p-10 lg:p-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+
+            <!-- Left Column: Direct Contact Cards -->
+            <div class="lg:col-span-5 space-y-6">
+              <div>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 border border-emerald-100 dark:border-emerald-500/20">
+                  Open to Opportunities
+                </span>
+                <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] dark:text-white leading-tight">
+                  Let&rsquo;s Build Something Impactful Together
+                </h2>
+                <p class="mt-3 text-sm sm:text-base text-[#475569] dark:text-slate-400 leading-relaxed">
+                  Looking for a Data Science, Risk Analytics, or Business Analyst hire who can start immediately? Reach out directly via email, phone, or LinkedIn.
+                </p>
+              </div>
+
+              <!-- Interactive Contact Details Stack -->
+              <div class="space-y-3">
+                <!-- Email Card with Copy Button -->
+                <div class="flex items-center justify-between gap-3 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-[#E2E8F0] dark:border-slate-800 shadow-sm">
+                  <div class="flex items-center gap-3 min-w-0">
+                    <div class="p-2.5 rounded-xl bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-400 shrink-0">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                      </svg>
+                    </div>
+                    <div class="min-w-0">
+                      <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Email</p>
+                      <a id="direct-email-text" href="mailto:aniqfahmi03@gmail.com" class="text-sm font-semibold text-[#0F172A] dark:text-white hover:text-[#2563EB] truncate block">
+                        aniqfahmi03@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="copyEmailAddress()"
+                    class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#EFF6FF] hover:bg-blue-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-[#2563EB] dark:text-blue-300 border border-blue-100 dark:border-slate-700 transition-colors shrink-0"
+                  >
+                    Copy Email
+                  </button>
+                </div>
+
+                <!-- Phone Card -->
+                <a href="tel:+60173894013" class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-[#E2E8F0] dark:border-slate-800 hover:border-emerald-300 dark:hover:border-emerald-500/40 shadow-sm transition-all">
+                  <div class="p-2.5 rounded-xl bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-400 shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Phone</p>
+                    <p class="text-sm font-semibold text-[#0F172A] dark:text-white">017-3894013</p>
+                  </div>
+                </a>
+
+                <!-- Location Card -->
+                <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-950/80 border border-[#E2E8F0] dark:border-slate-800 shadow-sm">
+                  <div class="p-2.5 rounded-xl bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-400 shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Location &amp; Status</p>
+                    <p class="text-sm font-semibold text-[#0F172A] dark:text-white">Subang Jaya, Selangor &bull; Available Immediately</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social + Direct PDF Download Buttons -->
+              <div class="flex flex-wrap gap-2.5 pt-1">
+                <a
+                  href="https://www.linkedin.com/in/aniqfahmi03/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-950 text-[#0F172A] dark:text-white border border-[#E2E8F0] dark:border-slate-700 hover:border-blue-300 hover:text-[#2563EB] transition-all"
+                >
+                  <svg class="w-4 h-4 text-[#2563EB]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+
+                <a
+                  href="https://github.com/aniqfahmi03"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-white dark:bg-slate-950 text-[#0F172A] dark:text-white border border-[#E2E8F0] dark:border-slate-700 hover:border-slate-400 transition-all"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+
+                <a
+                  href="Aniq_Fahmi_Resume.pdf"
+                  download="Aniq_Fahmi_Resume.pdf"
+                  class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#059669] hover:bg-emerald-700 text-white shadow-sm transition-all"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Resume PDF</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Quick-Message Mailto Form (100% Static GitHub Pages Compatible) -->
+            <div class="lg:col-span-7">
+              <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-950 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft">
+                <h3 class="font-heading text-xl font-bold text-[#0F172A] dark:text-white">Send a Quick Message</h3>
+                <p class="mt-1 text-sm text-[#475569] dark:text-slate-400 mb-6">
+                  Fill out the details below to open a pre-addressed email straight to <span class="font-medium text-[#2563EB] dark:text-blue-400">aniqfahmi03@gmail.com</span>.
+                </p>
+
+                <form id="contact-form" class="space-y-4">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label for="sender-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                        Your Name
+                      </label>
+                      <input
+                        id="sender-name"
+                        name="name"
+                        type="text"
+                        required
+                        placeholder="e.g. Aina Rahman"
+                        class="w-full px-4 py-3 rounded-xl text-sm bg-[#F8FAFC] dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-700 text-[#0F172A] dark:text-white placeholder-slate-400 focus:outline-none focus:bg-white dark:focus:bg-slate-900 focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/20 transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label for="sender-email" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                        Your Email
+                      </label>
+                      <input
+                        id="sender-email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="aina@company.com"
+                        class="w-full px-4 py-3 rounded-xl text-sm bg-[#F8FAFC] dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-700 text-[#0F172A] dark:text-white placeholder-slate-400 focus:outline-none focus:bg-white dark:focus:bg-slate-900 focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/20 transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label for="sender-subject" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                      Subject
+                    </label>
+                    <input
+                      id="sender-subject"
+                      name="subject"
+                      type="text"
+                      required
+                      placeholder="Interview Opportunity — Data Science / Business Analyst"
+                      class="w-full px-4 py-3 rounded-xl text-sm bg-[#F8FAFC] dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-700 text-[#0F172A] dark:text-white placeholder-slate-400 focus:outline-none focus:bg-white dark:focus:bg-slate-900 focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/20 transition-all"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="sender-message" class="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-1.5">
+                      Message
+                    </label>
+                    <textarea
+                      id="sender-message"
+                      name="message"
+                      rows="4"
+                      required
+                      placeholder="Hi Aniq, we came across your portfolio and would like to connect regarding..."
+                      class="w-full px-4 py-3 rounded-xl text-sm bg-[#F8FAFC] dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-700 text-[#0F172A] dark:text-white placeholder-slate-400 focus:outline-none focus:bg-white dark:focus:bg-slate-900 focus:border-[#2563EB] focus:ring-2 focus:ring-blue-500/20 transition-all resize-y"
+                    ></textarea>
+                  </div>
+
+                  <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+                    <button
+                      type="submit"
+                      class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold bg-[#2563EB] hover:bg-blue-700 text-white shadow-md shadow-blue-600/20 hover:shadow-lg transition-all"
+                    >
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                      </svg>
+                      <span>Compose &amp; Send Email</span>
+                    </button>
+                    <button
+                      type="button"
+                      onclick="openResumeModal()"
+                      class="text-xs font-semibold text-[#0284C7] dark:text-sky-400 hover:underline"
+                    >
+                      Or preview Resume PDF &rarr;
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#F8FAFC] dark:bg-slate-900/80 border-t border-slate-200/80 dark:border-slate-800 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+      <p>&copy; 2026 Muhammad Aniq Fahmi Bin Azhar. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="https://www.linkedin.com/in/aniqfahmi03/" target="_blank" rel="noopener noreferrer" class="hover:text-[#2563EB] transition-colors">LinkedIn</a>
+        <a href="https://github.com/aniqfahmi03" target="_blank" rel="noopener noreferrer" class="hover:text-[#0F172A] dark:hover:text-white transition-colors">GitHub</a>
+        <a href="#about" class="inline-flex items-center gap-1 font-semibold text-[#2563EB] dark:text-blue-400 hover:underline">
+          <span>Back to Top</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="m18 15-6-6-6 6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== TOAST NOTIFICATION ==================== -->
+  <div
+    id="toast-banner"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-5 right-5 z-50 hidden items-center gap-2.5 px-4 py-3 rounded-2xl bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] text-sm font-medium shadow-xl border border-slate-700 dark:border-slate-200"
+  >
+    <span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+    <span id="toast-message">Action completed.</span>
+  </div>
+
+  <!-- ==================== MODAL 1: PROJECT CASE STUDY MODAL ==================== -->
+  <div
+    id="case-study-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cs-modal-title"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm"
+    onclick="if (event.target === this) closeCaseStudyModal()"
+  >
+    <div class="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-2xl p-6 sm:p-8">
+      <!-- Close Button -->
+      <button
+        type="button"
+        aria-label="Close Case Study"
+        onclick="closeCaseStudyModal()"
+        class="absolute top-5 right-5 p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Category & Badge -->
+      <div id="cs-modal-badges" class="flex flex-wrap items-center gap-2 mb-3 pr-10"></div>
+
+      <!-- Title -->
+      <h3 id="cs-modal-title" class="font-heading text-2xl font-extrabold text-[#0F172A] dark:text-white leading-snug"></h3>
+
+      <!-- Highlight Metric Banner -->
+      <div id="cs-modal-metric" class="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#ECFDF5] dark:bg-emerald-500/15 border border-emerald-200 dark:border-emerald-500/30 text-[#059669] dark:text-emerald-300 text-xs sm:text-sm font-semibold"></div>
+
+      <!-- Structured Detail Cards -->
+      <div class="mt-6 space-y-4 text-sm leading-relaxed">
+        <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/70 border border-[#E2E8F0] dark:border-slate-800">
+          <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-[#2563EB] dark:text-blue-400 mb-1.5">
+            01. Problem Statement
+          </h4>
+          <p id="cs-modal-problem" class="text-[#475569] dark:text-slate-300"></p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/70 border border-[#E2E8F0] dark:border-slate-800">
+          <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-[#0284C7] dark:text-sky-400 mb-1.5">
+            02. Approach &amp; Execution
+          </h4>
+          <p id="cs-modal-approach" class="text-[#475569] dark:text-slate-300"></p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-[#F8FAFC] dark:bg-slate-950/70 border border-[#E2E8F0] dark:border-slate-800">
+          <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-[#059669] dark:text-emerald-400 mb-2">
+            03. Key Impact &amp; Deliverables
+          </h4>
+          <ul id="cs-modal-impact" class="space-y-2 text-[#475569] dark:text-slate-300"></ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+            Tech Stack &amp; Methods
+          </h4>
+          <div id="cs-modal-stack" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Footer Action Bar -->
+      <div class="mt-7 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+        <a
+          id="cs-modal-github"
+          href="https://github.com/aniqfahmi03"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#EFF6FF] hover:bg-blue-100 dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 border border-blue-200 dark:border-blue-500/30 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+          <span>View on GitHub</span>
+        </a>
+
+        <button
+          type="button"
+          onclick="closeCaseStudyModal()"
+          class="px-5 py-2.5 rounded-xl text-sm font-semibold bg-[#0F172A] dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white transition-colors"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 2: RESUME PDF PREVIEW & DOWNLOAD MODAL ==================== -->
+  <div
+    id="resume-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="resume-modal-title"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 bg-slate-900/65 backdrop-blur-sm"
+    onclick="if (event.target === this) closeResumeModal()"
+  >
+    <div id="resume-printable-area" class="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-2xl p-6 sm:p-9">
+
+      <!-- Modal Top Action Bar (Hidden on Print) -->
+      <div class="no-print flex flex-wrap items-center justify-between gap-3 pb-5 mb-6 border-b border-slate-200 dark:border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300">
+            Official Resume
+          </span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 hidden sm:inline">Aniq_Fahmi_Resume.pdf</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Direct Download Official PDF -->
+          <a
+            href="Aniq_Fahmi_Resume.pdf"
+            download="Aniq_Fahmi_Resume.pdf"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#2563EB] hover:bg-blue-700 text-white shadow-sm transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>Download Official PDF</span>
+          </a>
+
+          <!-- Open PDF in New Tab -->
+          <a
+            href="Aniq_Fahmi_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-[#ECFDF5] hover:bg-emerald-100 dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+            <span>Open PDF in New Tab</span>
+          </a>
+
+          <!-- Print / Save as PDF Fallback -->
+          <button
+            type="button"
+            onclick="window.print()"
+            class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-[#0F172A] dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect width="12" height="8" x="6" y="14"></rect>
+            </svg>
+            <span>Print / Save as PDF</span>
+          </button>
+
+          <!-- Close Button -->
+          <button
+            type="button"
+            aria-label="Close Resume Modal"
+            onclick="closeResumeModal()"
+            class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Formatted Resume Preview Content -->
+      <div class="space-y-6 text-sm text-[#475569] dark:text-slate-300">
+
+        <!-- Resume Header -->
+        <div class="border-b-2 border-[#0F172A] dark:border-slate-700 pb-5">
+          <h3 id="resume-modal-title" class="font-heading text-2xl sm:text-3xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
+            MUHAMMAD ANIQ FAHMI BIN AZHAR
+          </h3>
+          <p class="mt-1 text-sm font-semibold text-[#2563EB] dark:text-blue-400">
+            Bachelor of Computer Science (Honours) in Data Science &nbsp;|&nbsp; Subang Jaya, Selangor &nbsp;|&nbsp; Available Immediately / Immediate Starter
+          </p>
+          <div class="mt-2.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-600 dark:text-slate-400">
+            <span>aniqfahmi03@gmail.com</span>
+            <span>&bull;</span>
+            <span>017-3894013</span>
+            <span>&bull;</span>
+            <a href="https://www.linkedin.com/in/aniqfahmi03/" target="_blank" rel="noopener noreferrer" class="text-[#2563EB] dark:text-blue-400 hover:underline">linkedin.com/in/aniqfahmi03</a>
+            <span>&bull;</span>
+            <a href="https://github.com/aniqfahmi03" target="_blank" rel="noopener noreferrer" class="text-[#2563EB] dark:text-blue-400 hover:underline">github.com/aniqfahmi03</a>
+          </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <div>
+          <h4 class="font-heading text-xs font-extrabold uppercase tracking-widest text-[#0F172A] dark:text-white mb-2">
+            Professional Summary
+          </h4>
+          <p class="leading-relaxed">
+            Results-driven Business Analyst and Data Science professional blending predictive analytics with strategic execution. Experienced in eliciting enterprise requirements, delivering ministry-level presentations, and developing deep learning solutions with 94% accuracy. Proven ability across TM Technology Services, AISS, and the Khazanah K-Youth Programme to turn complex data and operational pain points into actionable, end-to-end business value.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <h4 class="font-heading text-xs font-extrabold uppercase tracking-widest text-[#0F172A] dark:text-white mb-2.5">
+            Education
+          </h4>
+          <div class="space-y-2.5">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between">
+              <div>
+                <p class="font-bold text-[#0F172A] dark:text-white">Bachelor of Computer Science (Honours) (Data Science)</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Multimedia University &ndash; MMU Cyberjaya &nbsp;|&nbsp; CGPA: 3.24</p>
+              </div>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2022 &ndash; 2026</span>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between">
+              <div>
+                <p class="font-bold text-[#0F172A] dark:text-white">Foundation in IT</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Multimedia University &ndash; MMU Cyberjaya &nbsp;|&nbsp; CGPA: 3.60</p>
+              </div>
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">2021 &ndash; 2022</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working Experience -->
+        <div>
+          <h4 class="font-heading text-xs font-extrabold uppercase tracking-widest text-[#0F172A] dark:text-white mb-3">
+            Working Experience
+          </h4>
+          <div class="space-y-4">
+            <div>
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between">
+                <p class="font-bold text-[#0F172A] dark:text-white">Business Analyst &nbsp;|&nbsp; AISS Sdn Bhd</p>
+                <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">July 2026 &ndash; October 2026</span>
+              </div>
+              <ul class="mt-1.5 list-disc pl-5 space-y-1 text-xs leading-relaxed">
+                <li><strong>Stakeholder Engagement &amp; Solution Pitching:</strong> Prepared strategic project proposals and delivered high-level presentations to Malaysian ministries and key clients.</li>
+                <li><strong>Requirements Elicitation &amp; Process Mapping:</strong> Collaborated with cross-functional teams, clients, and end-users to translate business requirements into user stories, acceptance criteria, and process flow diagrams.</li>
+                <li><strong>Gap Analysis &amp; Feasibility:</strong> Conducted detailed gap analyses between existing system architectures and desired features to align technical deliverables.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between">
+                <p class="font-bold text-[#0F172A] dark:text-white">Graduate Trainee K-Youth Programme (Business Intelligence) &nbsp;|&nbsp; M&amp;N Group Companies</p>
+                <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">April 2026 &ndash; July 2026</span>
+              </div>
+              <ul class="mt-1.5 list-disc pl-5 space-y-1 text-xs leading-relaxed">
+                <li><strong>Business Intelligence &amp; Trend Analysis (KULQR):</strong> Analyzed platform metrics and evaluated corporate synthetic data to forecast market trends and guide corporate event strategies.</li>
+                <li><strong>Wix Studio &amp; Dynamic CMS Architecture:</strong> Managed multi-brand web platforms (KULQR &amp; JBQR), connecting Wix CMS databases to scalable dynamic layouts.</li>
+                <li><strong>Interactive UI &amp; Digital Content Operations:</strong> Designed targeted modals, responsive components, marketing storyboards, and tactical LinkedIn/TikTok publishing workflows.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between">
+                <p class="font-bold text-[#0F172A] dark:text-white">Data Science Intern (Division of Risk Management) &nbsp;|&nbsp; TM Technology Services Sdn. Bhd.</p>
+                <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">July 2025 &ndash; October 2025</span>
+              </div>
+              <ul class="mt-1.5 list-disc pl-5 space-y-1 text-xs leading-relaxed">
+                <li><strong>Data Sanitization &amp; Management:</strong> Executed comprehensive data cleaning and sanitization to guarantee integrity for downstream analytical models.</li>
+                <li><strong>Predictive Modeling Support:</strong> Collaborated on ML-based prediction projects enhancing risk assessment frameworks and data-driven decision-making.</li>
+                <li><strong>Risk Mitigation &amp; Visual Reporting:</strong> Contributed to Central Function risk mitigation strategies and translated findings into visual executive summaries in Canva.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between">
+                <p class="font-bold text-[#0F172A] dark:text-white">Retail Assistant (Part-Time) &nbsp;|&nbsp; Labeljiqaen Thrift Store, Cyberjaya</p>
+                <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">June 2024 &ndash; December 2025</span>
+              </div>
+              <ul class="mt-1.5 list-disc pl-5 space-y-1 text-xs leading-relaxed">
+                <li>Managed daily operations, inventory restocking, strategic pricing, proactive customer service, conflict resolution, and promotional setups.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Projects -->
+        <div>
+          <h4 class="font-heading text-xs font-extrabold uppercase tracking-widest text-[#0F172A] dark:text-white mb-2.5">
+            Key Academic Projects
+          </h4>
+          <div class="space-y-3 text-xs leading-relaxed">
+            <div>
+              <p class="font-bold text-[#0F172A] dark:text-white">Human Activity Prediction Using Machine Learning Techniques (Final Year Project &bull; Nov 2024 &ndash; Jul 2025)</p>
+              <p class="mt-0.5">Benchmarked SVM, Random Forest, CNN, and LSTM architectures achieving up to 94% accuracy on smartphone sensor data, paired with an interactive Streamlit dashboard evaluating accuracy and inference speed.</p>
+            </div>
+            <div>
+              <p class="font-bold text-[#0F172A] dark:text-white">Water Bodies Segmentation for Flood Management &amp; Environmental Monitoring (Visual Information Processing)</p>
+              <p class="mt-0.5">Developed an automated satellite imagery segmentation pipeline to detect and delineate water bodies, supporting real-time flood monitoring and disaster response prioritization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications & Expertise Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-3 border-t border-slate-200 dark:border-slate-800 text-xs">
+          <div>
+            <h4 class="font-heading text-xs font-extrabold uppercase tracking-widest text-[#0F172A] dark:text-white mb-2">
+              Awards &amp; Certifications
+            </h4>
+            <ul class="list-disc pl-4 space-y-1">
+              <li>CompTIA Tech+ (Expected November 2026)</li>
+              <li>Data Analyst: Career Preparation | IBM &ndash; Cognitive Class</li>
+              <li>Python 101 for Data Science | IBM Cognitive Class</li>
+              <li>Drag, Drop &amp; Visualize with Power BI</li>
+              <li>HTML Basic | BitDegree Learn</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-heading text-xs font-extrabold uppercase tracking-widest text-[#0F172A] dark:text-white mb-2">
+              Area of Expertise
+            </h4>
+            <ul class="space-y-1 leading-relaxed">
+              <li><strong>Languages:</strong> Python (Pandas, NumPy, Scikit-Learn), SQL (MySQL), HTML</li>
+              <li><strong>BI &amp; Web:</strong> Streamlit, Power BI, Matplotlib, Seaborn, Tableau, Wix Studio, Canva</li>
+              <li><strong>ML &amp; AI:</strong> Regression, Random Forest, SVM, CNN, LSTM, Image Segmentation</li>
+              <li><strong>Business Analysis:</strong> Requirements Gathering, Stakeholder Management, Process Mapping, Gap Analysis</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT INTERACTIVITY ==================== -->
+  <script>
+    // =========================================================================
+    // 1. PROJECT CASE STUDY DATA (Strictly excluding Petronas/MATLAB project)
+    // =========================================================================
+    const PROJECTS = [
+      {
+        id: 'human-activity-ml',
+        title: 'Human Activity Prediction Using Machine Learning Techniques',
+        category: 'Machine Learning',
+        badge: 'Final Year Project • Nov 2024 – Jul 2025',
+        metric: 'Up to 94% Classification Accuracy',
+        accentClass: 'from-[#2563EB] to-[#0284C7]',
+        badgeColors: 'bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 border-blue-100 dark:border-blue-500/20',
+        summary: 'Benchmarked Machine Learning (SVM, Random Forest) and Deep Learning (CNN, LSTM) architectures on smartphone sensor data to classify human activities (walking, running, sitting), paired with an interactive Streamlit dashboard comparing accuracy and inference speed for real-time deployment.',
+        tags: ['Python', 'TensorFlow/Keras', 'Scikit-Learn', 'Streamlit', 'Deep Learning'],
+        githubUrl: 'https://github.com/aniqfahmi03',
+        problem: 'Classifying multi-axis smartphone accelerometer and gyroscope telemetry into physical activities (walking, running, sitting) requires balancing classical tabular classifiers against temporal deep learning models while maintaining low inference latency for practical real-time use.',
+        approach: 'Built a structured benchmarking workflow in Python using Scikit-Learn and TensorFlow/Keras to train and compare SVM, Random Forest, 1D-CNN, and LSTM architectures. Wrapped evaluation metrics, confusion matrices, and inference speed comparisons inside an interactive Streamlit dashboard.',
+        impact: [
+          'Achieved up to 94% classification accuracy across human activity classes using deep learning architectures.',
+          'Enabled side-by-side comparison of model accuracy versus inference latency to pinpoint the optimal model for real-time deployment.',
+          'Delivered a clean Streamlit interface allowing technical and non-technical reviewers to explore performance metrics interactively.'
+        ]
+      },
+      {
+        id: 'water-bodies-segmentation',
+        title: 'Water Bodies Segmentation for Flood Management & Environmental Monitoring',
+        category: 'Machine Learning',
+        badge: 'Visual Information Processing',
+        metric: 'Automated Satellite Imagery Pipeline',
+        accentClass: 'from-[#0284C7] to-[#059669]',
+        badgeColors: 'bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-300 border-sky-100 dark:border-sky-500/20',
+        summary: 'Developed an automated computer vision image segmentation pipeline to detect and delineate water bodies from satellite imagery, improving water detection precision to support real-time flood monitoring and disaster response prioritization.',
+        tags: ['Python', 'Computer Vision', 'Image Segmentation', 'Satellite Imagery', 'Matplotlib'],
+        githubUrl: 'https://github.com/aniqfahmi03',
+        problem: 'During flood emergencies and environmental audits, manually mapping surface water extent from satellite imagery is slow and prone to errors caused by terrain texture, shadows, and atmospheric noise.',
+        approach: 'Engineered an automated computer vision image segmentation pipeline in Python to extract pixel-level water body masks from overhead satellite imagery, supported by quantitative mask validation and Matplotlib visual overlays.',
+        impact: [
+          'Improved water-boundary detection precision across varied satellite land-cover scenes.',
+          'Accelerated spatial assessment workflows, providing actionable data support for disaster response teams to prioritize high-risk flood zones.',
+          'Created a reproducible segmentation framework adaptable to ongoing environmental and hydrological monitoring.'
+        ]
+      },
+      {
+        id: 'kulqr-jbqr-bi-web',
+        title: 'KULQR & JBQR Multi-Brand Web Platform & BI Analytics',
+        category: 'BI & Web Ops',
+        badge: 'M&N Group Companies • K-Youth Programme',
+        metric: 'Dynamic CMS & Trend Forecasting',
+        accentClass: 'from-[#059669] to-[#0284C7]',
+        badgeColors: 'bg-[#ECFDF5] dark:bg-emerald-500/15 text-[#059669] dark:text-emerald-300 border-emerald-100 dark:border-emerald-500/20',
+        summary: 'Analyzed KULQR user metrics and corporate synthetic data to forecast market trends. Built and maintained dynamic Wix Studio CMS databases connecting to scalable multi-brand front-end layouts (KULQR & JBQR), interactive UI modals, and LinkedIn/TikTok publishing workflows.',
+        tags: ['Wix Studio', 'Dynamic CMS', 'Business Intelligence', 'UI Components', 'Data Analysis'],
+        githubUrl: 'https://github.com/aniqfahmi03',
+        problem: 'Scaling multi-brand digital tourism platforms (KULQR and JBQR) required both data-backed visibility into user engagement trends and a maintainable CMS architecture capable of updating layouts and interactive prompts without manual rework.',
+        approach: 'Evaluated KULQR platform performance metrics alongside corporate synthetic datasets to identify growth trends and inform upcoming event strategies. Simultaneously architected dynamic Wix Studio CMS collections connected to responsive multi-brand templates, targeted modal popups, and tactical LinkedIn/TikTok content pipelines.',
+        impact: [
+          'Turned platform user metrics and synthetic trend models into actionable recommendations for corporate events and product growth.',
+          'Streamlined multi-brand web maintenance across KULQR and JBQR via automated Wix CMS data binding.',
+          'Enhanced on-site user journeys and brand visibility through interactive UI components and structured social media publishing workflows.'
+        ]
+      },
+      {
+        id: 'enterprise-pitching-gap-analysis',
+        title: 'Enterprise Digital Solution Pitching & System Gap Analysis',
+        category: 'Business Analysis',
+        badge: 'AISS Sdn Bhd',
+        metric: 'Ministry-Level Presentations',
+        accentClass: 'from-[#2563EB] to-[#059669]',
+        badgeColors: 'bg-[#EFF6FF] dark:bg-blue-500/15 text-[#2563EB] dark:text-blue-300 border-blue-100 dark:border-blue-500/20',
+        summary: 'Prepared strategic enterprise proposals and pitched digital solutions to Malaysian ministries and key clients. Facilitated workshops to translate requirements into user stories, acceptance criteria, process flow diagrams, and architecture gap analyses.',
+        tags: ['Requirements Elicitation', 'Gap Analysis', 'Process Mapping', 'User Stories', 'Stakeholder Management'],
+        githubUrl: 'https://github.com/aniqfahmi03',
+        problem: 'Public-sector ministries and corporate organizations often face misalignment between high-level business pain points and technical implementation scopes, risking project delays and unclear acceptance benchmarks.',
+        approach: 'Facilitated structured stakeholder workshops and client discovery sessions to elicit core operational needs, converting them into clear user stories, acceptance criteria, end-to-end process flow diagrams, and feasibility gap analyses comparing current versus target architectures.',
+        impact: [
+          'Delivered executive proposals and high-level solution pitches directly to Malaysian ministries and corporate decision-makers.',
+          'Bridged communication between non-technical stakeholders and technical engineering teams through standardized BA documentation.',
+          'Streamlined development prioritization by clearly mapping architectural gaps and client expectations upfront.'
+        ]
+      },
+      {
+        id: 'tm-risk-management-ml',
+        title: 'Risk Management Data Sanitization & Predictive Modeling',
+        category: 'Machine Learning',
+        badge: 'TM Technology Services Sdn. Bhd.',
+        metric: 'Central Function Risk Strategy',
+        accentClass: 'from-[#0284C7] to-[#2563EB]',
+        badgeColors: 'bg-[#F0F9FF] dark:bg-sky-500/15 text-[#0284C7] dark:text-sky-300 border-sky-100 dark:border-sky-500/20',
+        summary: 'Executed comprehensive data cleaning and sanitization pipelines to ensure high data integrity for downstream models. Supported ML-based risk prediction frameworks, operational risk mitigation strategies, and executive visual reporting in Canva.',
+        tags: ['Python', 'Data Sanitization', 'Predictive Modeling', 'Risk Mitigation', 'Canva'],
+        githubUrl: 'https://github.com/aniqfahmi03',
+        problem: 'Enterprise risk assessment models rely heavily on accurate, consistent operational datasets; uncleaned inputs degrade predictive reliability and slow down executive risk governance reviews.',
+        approach: 'Executed end-to-end data sanitization, exploratory data analysis, and validation checks within the Division of Risk Management. Supported machine learning prediction workflows for risk assessment frameworks and synthesized technical insights into visual executive decks using Canva.',
+        impact: [
+          'Strengthened downstream analytical reliability by establishing clean, sanitized divisional datasets.',
+          'Contributed to operational risk identification and actionable mitigation strategies for the Central Function division.',
+          'Accelerated leadership decision-making through clear, executive-ready visual summaries.'
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // 2. RENDER & FILTER PROJECT CARDS
+    // =========================================================================
+    const projectsGrid = document.getElementById('projects-grid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    function renderProjects(category = 'All') {
+      const list = category === 'All'
+        ? PROJECTS
+        : PROJECTS.filter(p => p.category === category);
+
+      projectsGrid.innerHTML = list.map((project, idx) => {
+        const tagPills = project.tags.map(tag => `
+          <span class="px-2.5 py-1 rounded-lg text-[11px] font-medium bg-[#F8FAFC] dark:bg-slate-800/90 text-slate-600 dark:text-slate-300 border border-[#E2E8F0] dark:border-slate-700">
+            ${tag}
+          </span>
+        `).join('');
+
+        return `
+          <article
+            style="animation-delay: ${idx * 60}ms"
+            class="animate-card group relative flex flex-col justify-between rounded-2xl bg-white dark:bg-slate-900 border border-[#E2E8F0] dark:border-slate-800 shadow-card-soft hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+          >
+            <!-- Subtle Colored Top Accent Bar -->
+            <div class="h-1.5 w-full bg-gradient-to-r ${project.accentClass}"></div>
+
+            <div class="p-6 flex flex-col flex-1 justify-between">
+              <div>
+                <!-- Badge & Category -->
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5">
+                  <span class="px-2.5 py-1 rounded-lg text-[11px] font-semibold border ${project.badgeColors}">
+                    ${project.category}
+                  </span>
+                  <span class="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                    ${project.badge}
+                  </span>
+                </div>
+
+                <!-- Project Title -->
+                <h3 class="font-heading text-lg font-bold text-[#0F172A] dark:text-white leading-snug group-hover:text-[#2563EB] dark:group-hover:text-blue-400 transition-colors">
+                  ${project.title}
+                </h3>
+
+                <!-- Highlight Impact Metric -->
+                <div class="mt-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#ECFDF5] dark:bg-emerald-500/10 text-[#059669] dark:text-emerald-300 text-xs font-semibold">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                    <polyline points="16 7 22 7 22 13"></polyline>
+                  </svg>
+                  <span>${project.metric}</span>
+                </div>
+
+                <!-- Summary -->
+                <p class="mt-3.5 text-sm text-[#475569] dark:text-slate-300 leading-relaxed">
+                  ${project.summary}
+                </p>
+              </div>
+
+              <div class="mt-5">
+                <!-- Tech Tags -->
+                <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800 mb-5">
+                  ${tagPills}
+                </div>
+
+                <!-- Action Buttons: Read Case Study + GitHub -->
+                <div class="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    onclick="openCaseStudyModal('${project.id}')"
+                    class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-[#EFF6FF] hover:bg-[#2563EB] dark:bg-blue-500/15 dark:hover:bg-[#2563EB] text-[#2563EB] hover:text-white dark:text-blue-300 dark:hover:text-white border border-blue-100 dark:border-blue-500/20 hover:border-transparent transition-all"
+                  >
+                    <span>Read Case Study</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </button>
+
+                  <a
+                    href="${project.githubUrl}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View GitHub Profile"
+                    title="View on GitHub"
+                    class="inline-flex items-center justify-center p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white border border-[#E2E8F0] dark:border-slate-700 hover:border-slate-400 transition-all"
+                  >
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    // Filter Button Event Listeners
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-[#2563EB]', 'text-white', 'font-semibold', 'shadow-sm', 'shadow-blue-600/20');
+          b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300', 'border', 'border-[#E2E8F0]', 'dark:border-slate-700', 'font-medium');
+        });
+        btn.classList.add('active', 'bg-[#2563EB]', 'text-white', 'font-semibold', 'shadow-sm', 'shadow-blue-600/20');
+        btn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-600', 'dark:text-slate-300', 'border', 'border-[#E2E8F0]', 'dark:border-slate-700', 'font-medium');
+
+        renderProjects(btn.getAttribute('data-filter'));
+      });
+    });
+
+    // =========================================================================
+    // 3. MODALS: CASE STUDY & RESUME PDF PREVIEW
+    // =========================================================================
+    const caseStudyModal = document.getElementById('case-study-modal');
+    const resumeModal = document.getElementById('resume-modal');
+
+    function openCaseStudyModal(projectId) {
+      const project = PROJECTS.find(p => p.id === projectId);
+      if (!project) return;
+
+      document.getElementById('cs-modal-title').textContent = project.title;
+      document.getElementById('cs-modal-metric').innerHTML = `
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+          <polyline points="16 7 22 7 22 13"></polyline>
+        </svg>
+        <span>${project.metric}</span>
+      `;
+      document.getElementById('cs-modal-badges').innerHTML = `
+        <span class="px-2.5 py-1 rounded-lg text-xs font-semibold border ${project.badgeColors}">${project.category}</span>
+        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">${project.badge}</span>
+      `;
+      document.getElementById('cs-modal-problem').textContent = project.problem;
+      document.getElementById('cs-modal-approach').textContent = project.approach;
+      document.getElementById('cs-modal-impact').innerHTML = project.impact.map(item => `
+        <li class="flex items-start gap-2.5">
+          <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#059669] shrink-0"></span>
+          <span>${item}</span>
+        </li>
+      `).join('');
+      document.getElementById('cs-modal-stack').innerHTML = project.tags.map(t => `
+        <span class="px-3 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700">${t}</span>
+      `).join('');
+      document.getElementById('cs-modal-github').href = project.githubUrl;
+
+      caseStudyModal.classList.remove('hidden');
+      caseStudyModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCaseStudyModal() {
+      caseStudyModal.classList.add('hidden');
+      caseStudyModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function openResumeModal() {
+      resumeModal.classList.remove('hidden');
+      resumeModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeResumeModal() {
+      resumeModal.classList.add('hidden');
+      resumeModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close open modals on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCaseStudyModal();
+        closeResumeModal();
+      }
+    });
+
+    // =========================================================================
+    // 4. LIGHT / DARK THEME TOGGLE (Strictly Light Mode Default on Load)
+    // =========================================================================
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Enforce bright Light Mode strictly on initial load
+    htmlEl.classList.remove('dark');
+
+    themeToggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+    });
+
+    // =========================================================================
+    // 5. MOBILE HAMBURGER MENU
+    // =========================================================================
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
+      menuOpenIcon.classList.toggle('hidden', !isHidden);
+      menuCloseIcon.classList.toggle('hidden', isHidden);
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        menuOpenIcon.classList.remove('hidden');
+        menuCloseIcon.classList.add('hidden');
+      });
+    });
+
+    // =========================================================================
+    // 6. TOAST HELPER & ONE-CLICK EMAIL COPY (iframe-safe execCommand)
+    // =========================================================================
+    let toastTimer = null;
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-banner');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3200);
+    }
+
+    function copyEmailAddress() {
+      const email = 'aniqfahmi03@gmail.com';
+      const tempInput = document.createElement('input');
+      tempInput.value = email;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        showToast('Email copied: aniqfahmi03@gmail.com');
+      } catch (err) {
+        showToast('Email: aniqfahmi03@gmail.com');
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // =========================================================================
+    // 7. STATIC MAILTO QUICK-MESSAGE FORM
+    // =========================================================================
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('sender-name').value.trim();
+      const email = document.getElementById('sender-email').value.trim();
+      const subject = document.getElementById('sender-subject').value.trim();
+      const message = document.getElementById('sender-message').value.trim();
+
+      const body = `Hi Aniq,\n\n${message}\n\nBest regards,\n${name}\n(${email})`;
+      const mailtoLink = `mailto:aniqfahmi03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      showToast('Opening your email client to send message...');
+      window.location.href = mailtoLink;
+    });
+
+    // =========================================================================
+    // 8. SCROLL-SPY ACTIVE NAVBAR & INTERSECTION OBSERVER REVEAL
+    // =========================================================================
+    function initScrollFeatures() {
+      // Fade-up scroll reveal
+      const revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+      } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+      }
+
+      // Scroll-spy for sticky navigation links
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      const updateActiveNav = () => {
+        let currentId = 'about';
+        const scrollPosition = window.scrollY + 130;
+
+        sections.forEach(section => {
+          if (scrollPosition >= section.offsetTop) {
+            currentId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('data-section') === currentId);
+        });
+      };
+
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+    }
+
+    // Initialize Page
+    renderProjects('All');
+    initScrollFeatures();
+  </script>
+</body>
+</html>
